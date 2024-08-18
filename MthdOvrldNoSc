@@ -1,0 +1,47 @@
+package javalab;
+
+
+
+class example1{
+
+	void area (double r) {
+
+	System.out.println("area of circle ="+3.14*r);
+
+	}
+
+	void area(int s) {
+
+		System.out.println("area of square is="+s*s);}
+
+		void area(double i,double j) {
+
+			System.out.println("area of rectangle="+i*j);
+
+		}
+
+	 }
+
+public class Methodoverloading{
+
+	public static void main(String[] args) {
+
+		example1 p =new example1();
+
+		p.area(4.2);
+
+		p.area(5);
+
+		p.area(2.23, 6.66);
+
+	
+
+		
+
+		
+
+		
+
+	}
+
+}
