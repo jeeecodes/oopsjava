@@ -1,0 +1,30 @@
+import java.util.*;
+public class transpose {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the rows and columns of first matrix");
+        int r1=sc.nextInt();
+        int c1=sc.nextInt();
+        int A [][] =new int [r1][c1];
+        System.out.println("enter the elemnts of A");
+        for(int i=0;i<r1;i++){
+            for(int j=0;j<c1;j++){
+                A[i][j]=sc.nextInt();
+
+            }
+        }
+        System.out.println("matrix A is");
+for(int i=0;i<r1;i++){
+    for(int j=0;j<c1;j++){
+        System.out.print(A[i][j] +"\t");}
+        System.out.println();}
+        System.err.println("the transposed matrix is");
+        for(int i=0;i<c1;i++){
+            for(int j=0;j<r1;j++){
+                System.out.print(A[j][i] +"\t");}
+                System.out.println();}
+              
+
+    }
+}
+
