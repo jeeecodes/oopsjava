@@ -1,0 +1,44 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+class Printeven extends Thread{
+    public void run(){
+        try {
+            File ob=new File("even4.txt");
+            FileWriter fout=new FileWriter("even4.txt");
+             for(int i=50;i<=100;i+=2){
+            fout.write(i+"\n");}
+            System.out.println("Sucessfully wriitteen to file");
+            fout.close();}
+            catch(IOException e){
+System.out.println(e.getMessage());
+            }
+        
+        
+    }}
+
+
+class Printodd extends Thread{
+    public void run(){
+        try {
+            File ob=new File("oddd3.txt");
+            FileWriter fout=new FileWriter("oddd3.txt");
+            for(int i=51;i<=100;i+=2){
+                fout.write(i+"\n");}
+                System.out.println("Sucessfully wriitteen to file");
+            fout.close();}
+                catch(IOException e){
+    System.out.println(e.getMessage());
+           
+        
+        }
+    }}
+
+    public class fileevn{
+    public static void main(String [] args){
+        Printeven t1=new Printeven();
+        Printodd t2=new Printodd();
+        t1.start();
+        t2.start();
+    }
+}
