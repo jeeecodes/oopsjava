@@ -1,0 +1,67 @@
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+ class arms extends JFrame implements ActionListener {
+    JTextField t1,t2;
+    JButton b;
+    JLabel l1,l2;
+    arms(){
+        setLayout(new FlowLayout());
+        setTitle("Armstrong Checker");
+        l1=new JLabel("enter the number");
+        t1=new JTextField(10);
+        l2=new JLabel("Result");
+        t2=new JTextField(10);
+        b=new JButton("check");
+        t2.setEditable(false);
+
+        add(l1);
+        add(t1);
+        add(l2);
+        add(t2);
+        add(b);
+
+        b.addActionListener(this);
+
+
+    setSize(400,200);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setVisible(true);}
+private boolean IsArms(int num){
+    int ognum=num;
+    int sum=0;
+    int rem;
+    while(num>0){
+        rem=num%10;
+        sum=sum+rem*rem*rem;
+        num=num/10;
+    }
+    return sum==ognum;
+
+}
+
+
+
+public void actionPerformed(ActionEvent e){
+   try{
+        int num=Integer.parseInt(t1.getText());
+        if(IsArms(num)){
+            t2.setText(num+ "is armstrong");
+        }else{
+            t2.setText(num+ "is not an armstrong number");
+        }
+    }
+ catch(NumberFormatException ek){
+        System.out.println("enter a valid number");
+
+    }}
+
+        public static void main(String[] args) {
+            new arms();
+        }
+    }
+
+
+     
+ 
