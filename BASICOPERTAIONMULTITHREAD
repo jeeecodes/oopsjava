@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+
+class addition extends Thread{
+    int a,b;
+    addition(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    public void run(){
+        int  Sum1=a+b;
+        System.out.println("THE SUM OF TWO NUMBERS IS " +Sum1);
+}}
+class Subtr extends Thread{
+    int a,b;
+    Subtr(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    public void run(){
+        int  diff=a-b;
+        System.out.println("THE DIFFERENCE OF TWO NNUMBERS IS " +diff);
+}}
+class Multi extends Thread{
+    int a,b;
+    Multi(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    public void run(){
+        int  mul1=a*b;
+        System.out.println("THE PRODUCT OF TWO NUMBERS IS " +mul1);
+}}
+class Division extends Thread{
+    int a,b;
+    Division(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    public void run(){
+        int  Div=a/b;
+        System.out.println("THE QUOTIENT OF TWO NUMBERS IS "  +Div);
+
+}}
+public class MathOperations{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter two numbers");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        addition t1=new addition(a, b);
+        Subtr t2=new Subtr(a, b);
+        Multi t3=new Multi(a, b);
+        Division t4=new Division(a, b);
+        t1.start();
+        try{
+        t1.sleep(1000);}
+        catch(InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+        t2.start();
+        try{
+            t2.sleep(1000);}
+            catch(InterruptedException e){
+                System.out.println(e.getMessage());
+            }
+        t3.start();
+        try{
+            t3.sleep(1000);}
+            catch(InterruptedException e){
+                System.out.println(e.getMessage());
+            }
+        t4.start();
+        try{
+            t4.sleep(1000);}
+            catch(InterruptedException e){
+                System.out.println(e.getMessage());
+            }
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
+            
+        } catch ( InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+}
